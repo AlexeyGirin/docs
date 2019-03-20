@@ -19,6 +19,8 @@ AcceptAlert();
 ### DropDown
 **DropDown** – a graphical control element, that allows the user to choose one value from a list.
 
+![DropDown](../images/dropdown.png)
+
 Here is the list of some available methods:
 
 |Method | Description | Return Type
@@ -52,6 +54,8 @@ public void GetSelectedExample()
 
 ### DataList
 **DataList** – a graphical control element, that allows the user to choose one value from a list or enter it by himself.
+
+![DataList](../images/datalist.png)
 
 Here is the list of some available methods:
 
@@ -88,6 +92,8 @@ public void FillDataList()
 ### MultiSelector
 **MultiSelector** – a graphical control element, that allows the user to do multiple choice.
 
+![MultiSelector](../images/multiselector.png)
+
 Here is the list of some available methods:
 
 |Method | Description | Return Type
@@ -98,7 +104,6 @@ Here is the list of some available methods:
 
 [Test examples](https://github.com/jdi-testing/jdi-light-csharp/blob/master/JDI.Light/JDI.Light.Tests/Tests/Common/MultiSelectorTests.cs)
 
-Examples in C#:
 
 ```java 
 TBD
@@ -115,6 +120,24 @@ public void MultiSelectByIndexes()
     MyMultiSelector.Select(int[]);
 }
 ```
+
+###FileInput
+**FileInput** - a grafical control element, that allows the user to upload documents on the web site
+
+![FileInput](../images/fileinput.png)
+
+|Method | Description | Return Type
+--- | --- | ---
+**SelectFile(string filepath)** |Select file to upload  | void
+
+[Test examples](https://github.com/jdi-testing/jdi-light-csharp/blob/master/JDI.Light/JDI.Light.Tests/Tests/Common/FileInputTests.cs)
+
+```csharp
+[Test]
+public void FileInputTest()
+{
+    FileInput.SelectFile(CreateFile(filename));
+}
 
 ## Composite elements
 TBD
