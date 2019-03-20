@@ -4,8 +4,8 @@ Already implemented methods:
 
 | Method | Description | Return Type|
 --- | --- | ---
-**AssertThat()** | applicable for performing assert actions for tables | TableAssert
-**Is()** | applicable for performing assert actions for tables | TableAssert
+**AssertThat()** | Applicable for performing assert actions for tables | TableAssert
+**Is()** | Applicable for performing assert actions for tables | TableAssert
 **HasRowWithValues(params TableMatcher[] matchers)** | Asserts whether a row with particular matchers exists in a table | TableAssert
 **ContainsValue(string value, Column column)** | Sets an object for some value in particular column | TableMather 
 **InColumn(string value)** | Sets an object of some column by particular value | Column
