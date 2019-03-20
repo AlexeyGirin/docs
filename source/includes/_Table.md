@@ -11,7 +11,7 @@ Already implemented methods:
 **InColumn(string value)** | Sets an object of some column by particular value | Column
 **InColumn(int num)** | Sets an object of some column by particular column's number | Column
 **Row(params TableMatcher[] matchers)** | Sets and returns a row object of a table according to some matchers' params (returns 'null' if there is no such row) | Line
-**GetValue** | Returns a string content of values for particular row, where values are separated by ";" | string
+**GetValue()** | Returns a string content of values for particular row, where values are separated by ";" | string
 
 Action > Examples:
 
