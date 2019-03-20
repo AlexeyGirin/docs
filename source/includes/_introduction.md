@@ -99,9 +99,6 @@ public class LoginForm extends Form<User> {
     TextField userName = $("#name");
     TextField password = $("#password");
     Button enter = $("[type=submit]");
-    /*@Css("#name") TextField userName;
-    @Css("#password")  TextField password;
-    @Css("[type=submit]") Button enter;*/
 }
 ```
 
