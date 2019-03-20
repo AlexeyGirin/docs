@@ -102,6 +102,10 @@ public class LoginForm extends Form<User> {
 }
 ```
 
+### 4. Standard Test locators
+If you 
+
+
 ## Start new project with JDI
 ## How to improve your Selenium project with new capabilities in few minutes
 ## Logging and Reporting
