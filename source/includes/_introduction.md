@@ -22,7 +22,7 @@ public void loginTest() {
     homePage.checkOpened();
 }
 ```
-So simple!
+**So simple!**
 But this is not all, just Run this test in your IDE and what you will get?
 1. Detailed log in Console output:
 
@@ -39,17 +39,21 @@ But this is not all, just Run this test in your IDE and what you will get?
 ![Allure Report](../images/intro/allure-report.png)
 ![Allure Log](../images/intro/allure-report-log.png)
 
-Just move allure-results folder in target folder adn run maven > Plugins > allure > allure:serve
+Just move allure-results folder in target folder and run maven > Plugins > allure > allure:serve
 ![Allure Serve](../images/intro/allure-serve.png)
 
 ### 2. UI PageObjects
 So now let's look on PageObjects we have in JDI. In example above for "Login test" we have following PageObjects:
-* Site - entity for your application. Consist of list of Pages you have in application
+* Site - entity for your application. Collects all the Pages of your application, that can be init in one command
 
 ```java 
 @JSite("https://epam.github.io/JDI/")
 public class JdiTestSite {
     public static HomePage homePage;
+}
+@BeforeSuite(alwaysRun = true)
+public static void setUp() {
+    initElements(JdiTestSite.class);
 }
 ```
 * HomePage - Pages collects elements: common, complex and composite. Pages already have meta information about Url and Title and you can execute common actions with this Pages like: open, checkOpenned, get Url/Titile, zoom, scroll, work with cookies etc.
@@ -70,12 +74,36 @@ public class LoginForm extends Form<User> {
     @Css("[type=submit]") Button enter;
 }
 ```
-* UI elements (Typified elements) like Button, TextField, Checkbox, Icon etc. - simple elements that represents real elements on UI
-
-
+* UI elements (Typified elements) like Button, TextField, Checkbox, Icon etc. - are simple elements that represents real elements on UI
 
 This is common JDI project structure
 
+### 3. Short term non Page Objects style
+If you need to check somethhing fast and won't write Page Objects you can use simple like "JQuery/Selenide" style without any additional code
+
+```java 
+@Test
+public void nonPageObjectTest() {
+    WebPage.openUrl("https://epam.github.io/JDI/index.html");
+    $("img#user-icon").click();
+    $("form #name").input("epam");
+    $("form #password").input("1234");
+    $("form [type=submit]").click();
+    Assert.assertEquals(WebPage.getUrl(), "https://epam.github.io/JDI/index.html");
+}
+```
+You also can init your Page Objects directly with elements if don't like annotations
+
+```java 
+public class LoginForm extends Form<User> {
+    TextField userName = $("#name");
+    TextField password = $("#password");
+    Button enter = $("[type=submit]");
+    /*@Css("#name") TextField userName;
+    @Css("#password")  TextField password;
+    @Css("[type=submit]") Button enter;*/
+}
+```
 
 ## Start new project with JDI
 ## How to improve your Selenium project with new capabilities in few minutes
