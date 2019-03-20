@@ -7,7 +7,7 @@ Already implemented methods:
 **AssertThat()** | Applicable for performing assert actions for tables | TableAssert
 **Is()** | Applicable for performing assert actions for tables | TableAssert
 **HasRowWithValues(params TableMatcher[] matchers)** | Asserts whether a row with particular matchers exists in a table | TableAssert
-**ContainsValue(string value, Column column)** | Sets an object for some value in particular column | TableMather 
+**ContainsValue(string value, Column column)** | Sets an object for some value in particular column | TableMatcher 
 **InColumn(string value)** | Sets an object of some column by particular value | Column
 **InColumn(int num)** | Sets an object of some column by particular column's number | Column
 **Row(params TableMatcher[] matchers)** | Sets and returns a row object of a table according to some matchers' params (returns 'null' if there is no such row) | Line
