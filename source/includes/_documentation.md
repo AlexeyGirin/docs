@@ -121,6 +121,24 @@ public void MultiSelectByIndexes()
 }
 ```
 
+###FileInput
+**FileInput** - a grafical control element, that allows the user to upload documents on the web site
+
+![FileInput](../images/fileinput.png)
+
+|Method | Description | Return Type
+--- | --- | ---
+**SelectFile(string filepath)** |Select file to upload  | void
+
+[Test examples](https://github.com/jdi-testing/jdi-light-csharp/blob/master/JDI.Light/JDI.Light.Tests/Tests/Common/FileInputTests.cs)
+
+```csharp
+[Test]
+public void FileInputTest()
+{
+    FileInput.SelectFile(CreateFile(filename));
+}
+
 ## Composite elements
 TBD
 
