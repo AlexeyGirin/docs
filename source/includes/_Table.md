@@ -1,4 +1,4 @@
-# Table
+# table
 
 Already implemented methods:
 
