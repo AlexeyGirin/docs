@@ -61,6 +61,7 @@ Here is the list of some available methods:
 
 |Method | Description | Return Type
 --- | --- | ---
+**Expand()** |Expands the list of possible values | void
 **Select(string/int)** |Select datalist by value/index  | void
 **Input(string value)** |Input user's value into datalist  | void
 **GetSelected()** |Get selected datalist value  | string
@@ -71,6 +72,11 @@ Here is the list of some available methods:
 TBD
 ```
 ```csharp 
+[Test]
+public void ExpandDataList() 
+{
+    MyDataList.Expand();
+}
 [Test]
 public void SelectDataList() 
 {
@@ -120,6 +126,49 @@ public void MultiSelectByIndexes()
     MyMultiSelector.Select(int[]);
 }
 ```
+### ComboBox
+**ComboBox** – a graphical control element, that allows the user to choose one value from a list or enter it by himself (is inherited from the DataList).
+
+![ComboBox](../images/datalist.png)
+
+Here is the list of some available methods:
+
+|Method | Description | Return Type
+--- | --- | ---
+**Expand()** |Expands the list of possible values | void
+**Select(string/int)** |Select datalist by value/index  | void
+**Input(string value)** |Input user's value into datalist  | void
+**GetSelected()** |Get selected datalist value  | string
+
+[Test examples](https://github.com/jdi-testing/jdi-light-csharp/blob/master/JDI.Light/JDI.Light.Tests/Tests/Common/ComboBoxTests.cs)
+
+```java 
+TBD
+```
+```csharp 
+[Test]
+public void ExpandComboBox() 
+{
+    MyComboBox.Expand();
+}
+[Test]
+public void SelectComboBox() 
+{
+    MyComboBox.Select("some value");
+}
+[Test]
+public void SelectByIndex() 
+{
+    MyComboBox.Select(1);
+}
+[Test]
+public void FillComboBox() 
+{
+    MyComboBox.Input("some value");
+    SubmitButton.Click();
+}
+```
+
 
 ###FileInput
 **FileInput** - a grafical control element, that allows the user to upload documents on the web site
