@@ -1,5 +1,7 @@
 # Table
 
+https://epam.github.io/JDI/performance.html
+
 Already implemented methods:
 
 | Method | Description | Return Type|
