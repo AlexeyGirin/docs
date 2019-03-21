@@ -52,6 +52,57 @@ public void GetSelectedExample()
 }
 ```
 
+### MultiDropDown
+**MultiDropDown** – a graphical control element, that allows the user to choose several values from a list.
+
+![DropDown](../images/multidropdown.png)
+
+Here is the list of some available methods:
+
+|Method | Description | Return Type
+--- | --- | ---
+**OptionIsEnabled(string)** |Check whether option is enabled  | bool
+**SelectOptionByname(string)** |Select specified option  | void
+**GetSelectedOptions()** |Get selected options  | List
+**SelectOptions(List)** |Select specified options  | void
+**OptionExists(string)** |Check whether option exists in list  | bool
+**Expand()** |Expand list  | void
+**Close()** |Close expanded list  | void
+
+[Test examples](https://github.com/jdi-testing/jdi-light-csharp/blob/master/JDI.Light/JDI.Light.Tests/Tests/Composite/MultiDropdownTests.cs)
+
+```java 
+TBD
+```
+```csharp 
+[Test]
+public void ExpandMultiDropdown()
+{
+    TestSite.Html5Page.MultiDropdown.Expand();
+}
+
+[Test]
+public void SelectMultipleOptions()
+{
+    var optionsList = new List<string> { "Steam", "Electro" };
+    TestSite.Html5Page.MultiDropdown.SelectOptions(optionsList);
+}
+
+[Test]
+public void CheckOptionExists()
+{
+    TestSite.Html5Page.MultiDropdown.Expand();
+    Jdi.Assert.IsTrue(TestSite.Html5Page.MultiDropdown.OptionExists("Steam"));
+}
+
+[Test]
+public void CheckOptionIsDisabled()
+{
+    TestSite.Html5Page.MultiDropdown.Expand();
+    Jdi.Assert.IsFalse(TestSite.Html5Page.MultiDropdown.OptionIsEnabled("Disabled"));
+}
+```
+
 ### DataList
 **DataList** – a graphical control element, that allows the user to choose one value from a list or enter it by himself.
 
