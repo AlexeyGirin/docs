@@ -6,6 +6,43 @@ TBD
 TBD
 
 ## Complex elements
+### RadioButton
+**RadioButton** – interface element that allows user to select one option from a predefined group.
+
+![RadioButton](../images/radiobutton.png)
+
+Here is the list of some available methods:
+
+|Method | Description | Return Type
+--- | --- | ---
+**Select(string/int)** |Select dropdown by value/index  | void
+**GetSelected()** |Get selected dropdown value  | string
+
+[Test examples](https://github.com/jdi-testing/jdi-light-csharp/blob/master/JDI.Light/JDI.Light.Tests/Tests/Common/RadioButtonTests.cs)
+
+```java 
+TBD
+```
+```csharp 
+[Test]
+public void SelectRadioButton() 
+{
+    MyRadioButton.Select("some value");
+}
+[Test]
+public void SelectRadioButtonByIndex() 
+{
+    MyRadioButton.Select(1);
+}
+[Test]
+public void GetSelected() 
+{
+    var selected = MyRadioButton.GetSelected();
+    Assert.AreEqual(selected, "some value");
+}
+```
+
+
 ### Table
 [Test examples](https://github.com/jdi-testing/jdi-light-csharp/blob/master/JDI.Light/JDI.Light.Tests/Tests/Complex/TableTests.cs)
 
