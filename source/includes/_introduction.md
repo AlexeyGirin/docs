@@ -20,9 +20,9 @@ public void loginTest() {
 1. Open HomePage ([https://epam.github.io/JDI/index.html](https://epam.github.io/JDI/index.html))
 2. Click on User Icon (to open login dialog)
 2. Login as some default user
-* Enter 'epam' in login textfield
-* Enter '1234' in password textfield
-* Press 'Enter' button
+    - Enter 'epam' in login textfield
+    - Enter '1234' in password textfield
+    - Press 'Enter' button
 3. Validate that HomePage is openned
 
 ```
