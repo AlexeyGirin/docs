@@ -100,7 +100,48 @@ If you need to check somethhing fast and won't write Page Objects you can use si
 You also can init your Page Objects directly with elements if don't like annotations
 
 ### 4. Standard Test locators
-If you 
+```
+<input type='text' id='name'>
+<input type='text' id='last-name'>
+<input type='text' id='passport-code'>
+<input type='text' id='passport-number'>
+<button id='submit-button'>
+```
+```java 
+public class UserCard extends Form<User> {
+    @Css('#name') TextField name;
+    @Css('#last-name') TextField lastName;
+    @Css('#passport-code') TextField passportCode;
+    @Css('#passport-number') TextField passportNumber;   
+    @Css('#submit-button') Button submitButton; 
+}
+If Smart locator rule is id
+WebSettings.SMART_SEARCH_LOCATORS = asList("#%s");
+and convertation rule is hyphen to java name
+WebSettings.SMART_SEARCH_NAME = StringUtils::splitHyphen;
+So you can write
+public class UserCard extends Form<User> {
+    TextField name;
+    TextField lastName;
+    TextField passportCode
+    TextField passportNumber;  
+    Button submitButton; 
+}
+or just write this in one line
+public class UserCard extends Form<User> {
+    TextField name, lastName, passportCode, passportNumber;  
+    Button submitButton; 
+}
+```
+If you have your developers follow some standard way to mark ui elements or you have an agreement to add special attribute you can even avoid to write locators for elements and make your page objects much more compact.
+
+You acn manage how to create locator from field name using 
+
+**WebSettings.SMART_SEARCH** - Function that invoked if you have element has no locator or just setting a list of used locators using
+
+**WebSettings.SMART_SEARCH_LOCATORS** - list of locators that can be used to try to find element
+
+**WebSettings.SMART_SEARCH_NAME** - function how to create locator name from filed name (this value will be passed as %s parameter in SMART_SEARCH_LOCATORS)
 
 
 ## Start new project with JDI
