@@ -33,6 +33,7 @@ public void loginTest() {
 ```
 **So simple!**
 But this is not all, just Run this test in your IDE and what you will get?
+
 1. Detailed log in Console output:
 
 **Nice!** Isn't it? :ok_hand:
