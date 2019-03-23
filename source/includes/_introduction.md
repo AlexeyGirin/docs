@@ -3,7 +3,8 @@
 ### 1. Create simple Login test
 For the beginning I would like to show you how tipycal problems can be solved with JDI. Let's start from Login, most of the tests starts from this you need to login on site.
 
-Java code example can be found here: https://github.com/jdi-examples/jdi-introduction
+Java code example can be found by link [https://github.com/jdi-examples/jdi-introduction](https://github.com/jdi-examples/jdi-introduction)
+
 Test Scenario
 ------
 
@@ -16,7 +17,7 @@ public void loginTest() {
     homePage.checkOpened();
 }
 ```
-1. Open HomePage (https://epam.github.io/JDI/index.html)
+1. Open HomePage ([https://epam.github.io/JDI/index.html](https://epam.github.io/JDI/index.html))
 2. Click on User Icon (to open login dialog)
 2. Login as some default user
 * Enter 'epam' in login textfield
