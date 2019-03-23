@@ -99,6 +99,12 @@ If you need to check somethhing fast and won't write Page Objects you can use si
 
 You also can init your Page Objects directly with elements if don't like annotations
 
+
+
+
+
+
+
 ### 4. Standard Test locators
 ```
 <input type="text" id="name">
