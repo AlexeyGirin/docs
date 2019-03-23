@@ -4,15 +4,6 @@
 For the beginning I would like to show you how tipycal problems can be solved with JDI. Let's start from Login, most of the tests starts from this you need to login on site.
 Java code example can be found here: https://github.com/jdi-examples/jdi-introduction
 
-Test Scenario
-------
-1) Open test site (https://epam.github.io/JDI/index.html)
-2) Login as user
-* Enter 'epam' in login textfield
-* Enter '1234' in password textfield
-* Press 'Enter' button
-3) Validate that HomePage id openned
-
 ```java 
 @Test
 public void loginTest() {
@@ -22,9 +13,14 @@ public void loginTest() {
     homePage.checkOpened();
 }
 ```
-**So simple!**
-But this is not all, just Run this test in your IDE and what you will get?
-1. Detailed log in Console output:
+Test Scenario
+------
+1. Open test site (https://epam.github.io/JDI/index.html)
+2. Login as user
+* Enter 'epam' in login textfield
+* Enter '1234' in password textfield
+* Press 'Enter' button
+3. Validate that HomePage id openned
 
 ```
 [22:17.102  STEP] : Open 'Home Page'(url=https://epam.github.io/JDI/index.html)
@@ -32,6 +28,10 @@ But this is not all, just Run this test in your IDE and what you will get?
 [22:23.727  STEP] : Login as User(userName:epam; password:1234)
 [22:24.516  STEP] : Check that 'Home Page' is opened (url CONTAINS '/index.html'; title EQUALS 'Home Page')
 ```
+**So simple!**
+But this is not all, just Run this test in your IDE and what you will get?
+1. Detailed log in Console output:
+
 **Nice!** Isn't it? :ok_hand:
 
 2. Same log in log file (src/test/.logs/) if you would like to see test execution results remotely (require log4j2.xml in src/test/resources)
@@ -42,10 +42,6 @@ But this is not all, just Run this test in your IDE and what you will get?
 Just move allure-results folder in target folder and run maven > Plugins > allure > allure:serve
 ![Allure Serve](../images/intro/allure-serve.png)
 
-### 2. UI PageObjects
-So now let's look on PageObjects we have in JDI. In example above for "Login test" we have following PageObjects:
-* Site - entity for your application. Collects all the Pages of your application, that can be init in one command
-
 ```java 
 @JSite("https://epam.github.io/JDI/")
 public class JdiTestSite {
@@ -55,31 +51,28 @@ public class JdiTestSite {
 public static void setUp() {
     initElements(JdiTestSite.class);
 }
-```
-* HomePage - Pages collects elements: common, complex and composite. Pages already have meta information about Url and Title and you can execute common actions with this Pages like: open, checkOpenned, get Url/Titile, zoom, scroll, work with cookies etc.
 
-```java 
 @Url("/index.html") @Title("Home Page")
 public class HomePage extends WebPage {
     @Css("form") public static LoginForm loginForm;
     @Css("img#user-icon") public static Icon userIcon;
 }
-```
-* LoginForm - Forms and Sections are logical parts of pages, they can include other sections or just elements. Forms also have additional actions like fill, submit, check etc.
 
-```java 
 public class LoginForm extends Form<User> {
     @Css("#name") TextField userName;
     @Css("#password")  TextField password;
     @Css("[type=submit]") Button enter;
 }
 ```
+### 2. UI PageObjects
+So now let's look on PageObjects we have in JDI. In example above for "Login test" we have following PageObjects:
+* Site - entity for your application. Collects all the Pages of your application, that can be init in one command
+
+* HomePage - Pages collects elements: common, complex and composite. Pages already have meta information about Url and Title and you can execute common actions with this Pages like: open, checkOpenned, get Url/Titile, zoom, scroll, work with cookies etc.
+* LoginForm - Forms and Sections are logical parts of pages, they can include other sections or just elements. Forms also have additional actions like fill, submit, check etc.
 * UI elements (Typified elements) like Button, TextField, Checkbox, Icon etc. - are simple elements that represents real elements on UI
 
 This is common JDI project structure
-
-### 3. Short term non Page Objects style
-If you need to check somethhing fast and won't write Page Objects you can use simple like "JQuery/Selenide" style without any additional code
 
 ```java 
 @Test
@@ -91,16 +84,16 @@ public void nonPageObjectTest() {
     $("form [type=submit]").click();
     Assert.assertEquals(WebPage.getUrl(), "https://epam.github.io/JDI/index.html");
 }
-```
-You also can init your Page Objects directly with elements if don't like annotations
-
-```java 
 public class LoginForm extends Form<User> {
     TextField userName = $("#name");
     TextField password = $("#password");
     Button enter = $("[type=submit]");
 }
 ```
+### 3. Short term non Page Objects style
+If you need to check somethhing fast and won't write Page Objects you can use simple like "JQuery/Selenide" style without any additional code
+
+You also can init your Page Objects directly with elements if don't like annotations
 
 ### 4. Standard Test locators
 If you 
