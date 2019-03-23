@@ -25,9 +25,9 @@ includes:
 search: true
 ---
 
-# JDI Framework
-JDI – is powerfull Test Automation Framework that helps to makes your tests fast, sustainable and provide obvious and predictable test run result
-JDI powered by Selenium and has simple integration with Selenium based projects
+# JDI Light Fraemwork
+JDI Light – is powerfull Test Automation Framework that helps to makes your tests fast, sustainable and provide obvious and predictable test run result
+JDI Light powered by Selenium and has simple integration with Selenium based projects
 ![Allure Report](images/intro/allure-report.png)
 ![Allure Log](images/intro/allure-report-log.png)
 
