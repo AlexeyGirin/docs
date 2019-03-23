@@ -101,19 +101,19 @@ You also can init your Page Objects directly with elements if don't like annotat
 
 ### 4. Standard Test locators
 ```
-<input type='text' id='name'>
-<input type='text' id='last-name'>
-<input type='text' id='passport-code'>
-<input type='text' id='passport-number'>
-<button id='submit-button'>
+<input type="text" id="name">
+<input type="text" id="last-name">
+<input type="text" id="passport-code">
+<input type="text" id="passport-number">
+<button id="submit-button">
 ```
 ```java 
 public class UserCard extends Form<User> {
-    @Css('#name') TextField name;
-    @Css('#last-name') TextField lastName;
-    @Css('#passport-code') TextField passportCode;
-    @Css('#passport-number') TextField passportNumber;   
-    @Css('#submit-button') Button submitButton; 
+    @Css("#name") TextField name;
+    @Css("#last-name") TextField lastName;
+    @Css("#passport-code") TextField passportCode;
+    @Css("#passport-number") TextField passportNumber;   
+    @Css("#submit-button") Button submitButton; 
 }
 If Smart locator rule is id
 WebSettings.SMART_SEARCH_LOCATORS = asList("#%s");
