@@ -135,7 +135,7 @@ public class UserCard extends Form<User> {
 ```
 If you have your developers follow some standard way to mark ui elements or you have an agreement to add special attribute you can even avoid to write locators for elements and make your page objects much more compact.
 
-You acn manage how to create locator from field name using 
+You can manage how to create locator from field name using 
 
 **WebSettings.SMART_SEARCH** - Function that invoked if you have element has no locator or just setting a list of used locators using
 
