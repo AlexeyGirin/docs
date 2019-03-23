@@ -2,7 +2,10 @@
 ## Simple JDI examples
 ### 1. Create simple Login test
 For the beginning I would like to show you how tipycal problems can be solved with JDI. Let's start from Login, most of the tests starts from this you need to login on site.
+
 Java code example can be found here: https://github.com/jdi-examples/jdi-introduction
+Test Scenario
+------
 
 ```java 
 @Test
@@ -13,14 +16,13 @@ public void loginTest() {
     homePage.checkOpened();
 }
 ```
-Test Scenario
-------
-1. Open test site (https://epam.github.io/JDI/index.html)
-2. Login as user
+1. Open HomePage (https://epam.github.io/JDI/index.html)
+2. Click on User Icon (to open login dialog)
+2. Login as some default user
 * Enter 'epam' in login textfield
 * Enter '1234' in password textfield
 * Press 'Enter' button
-3. Validate that HomePage id openned
+3. Validate that HomePage is openned
 
 ```
 [22:17.102  STEP] : Open 'Home Page'(url=https://epam.github.io/JDI/index.html)
