@@ -133,7 +133,7 @@ public class UserCard extends Form<User> {
     TextField passportNumber;  
     Button submitButton; 
 }
-or just write this in one line
+or just write all TextFields in one line
 public class UserCard extends Form<User> {
     TextField name, lastName, passportCode, passportNumber;  
     Button submitButton; 
@@ -148,6 +148,8 @@ You can manage how to create locator from field name using
 **WebSettings.SMART_SEARCH_LOCATORS** - list of locators that can be used to try to find element
 
 **WebSettings.SMART_SEARCH_NAME** - function how to create locator name from filed name (this value will be passed as %s parameter in SMART_SEARCH_LOCATORS)
+
+### 5. Asserts/Matchers integrated in elements
 
 
 ## Start new project with JDI
