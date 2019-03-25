@@ -154,36 +154,40 @@ You can manage how to create locator from field name using
 ```java 
 @Test
 public void assertTest{
-    title.is().text(containsString("jdi"));
-    name.assertThat().text(is("Roman"));
-    color.has().attr("color", is("red"))
+  title.is().text(containsString("jdi"));
+  name.assertThat().text(is("Roman"));
+  color.has().attr("color", is("red"))
 }
 @Test
 public void chainAssertTest{
-    title.assertThat()
-        .text(containsString("jdi"))
-        .attr("color", is("red"))
-        .tag(is("h1"))
+  title.assertThat()
+    .text(containsString("jdi"))
+    .attr("color", is("red"))
+    .tag(is("h1"))
 }
 @Test
 public void listAssertTest{
 	searchResults.assertThat()
-        .is().notEmpty();
-        .size(equalTo(10));
+    .is().notEmpty();
+    .size(equalTo(10));
 		.any(e -> e.name.equals("Jdi intro 2"))
 		.each(e -> e.name.toLowerCase().contains("jdi"));
 		.onlyOne(e -> e.name.contains("Jdi intro 1"));
 		.noOne(e -> e.name.contains("Selenide"));
 }
 @Test
-public void tableAssertsTest{
-	searchResults.assertThat()
-        .is().notEmpty();
-        .size(equalTo(10));
-		.any(e -> e.name.equals("Jdi intro 2"))
-		.each(e -> e.name.toLowerCase().contains("jdi"));
-		.onlyOne(e -> e.name.contains("Jdi intro 1"));
-		.noOne(e -> e.name.contains("Selenide"));
+public void tableChainTest() {
+	users.assertThat()
+		.displayed()
+		.size(6)
+		.size(greaterThan(3))
+		.notEmpty()
+		.row(d -> d.user.contains("Ivan"))
+		.allRows(d -> d.user.length() > 4)
+		.atLeast(3).rows(d -> d.type.contains("User"))       
+		.row(SPIDER_MAN)
+		.exact(2).rows(d -> d.description.contains(":VIP"))
+		.exact(1).rows(SPIDER_MAN);
 }
 ```
 
