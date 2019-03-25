@@ -151,6 +151,41 @@ You can manage how to create locator from field name using
 
 ### 5. Asserts/Matchers integrated in elements
 
+```java 
+@Test
+public void assertTest{
+    title.is().text(containsString("jdi"));
+    name.assertThat().text(is("Roman"));
+    color.has().attr("color", is("red"))
+}
+@Test
+public void chainAssertTest{
+    title.assertThat()
+        .text(containsString("jdi"))
+        .attr("color", is("red"))
+        .tag(is("h1"))
+}
+@Test
+public void listAssertTest{
+	searchResults.assertThat()
+        .is().notEmpty();
+        .size(equalTo(10));
+		.any(e -> e.name.equals("Jdi intro 2"))
+		.each(e -> e.name.toLowerCase().contains("jdi"));
+		.onlyOne(e -> e.name.contains("Jdi intro 1"));
+		.noOne(e -> e.name.contains("Selenide"));
+}
+@Test
+public void tableAssertsTest{
+	searchResults.assertThat()
+        .is().notEmpty();
+        .size(equalTo(10));
+		.any(e -> e.name.equals("Jdi intro 2"))
+		.each(e -> e.name.toLowerCase().contains("jdi"));
+		.onlyOne(e -> e.name.contains("Jdi intro 1"));
+		.noOne(e -> e.name.contains("Selenide"));
+}
+```
 
 ## Start new project with JDI
 ## How to improve your Selenium project with new capabilities in few minutes
