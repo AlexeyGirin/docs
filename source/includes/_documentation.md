@@ -183,6 +183,36 @@ public void FillDataList()
 }
 ```
 
+### CheckList
+**CheckList** – a graphical control element representing a set of checkboxes, each of which allows the user to control a two-state parameter (enabled or disabled).
+
+![CheckList](../images/checklist.png)
+
+Here is the list of some available methods:
+
+|Method | Description | Return Type
+--- | --- | ---
+**Select(string[]/int[])** |Select checklist by values/indexes  | void
+**GetSelected()** |Get selected checkboxes from checklist value  | string[]
+
+[Test examples](https://github.com/jdi-testing/jdi-light-csharp/blob/master/JDI.Light/JDI.Light.Tests/Tests/Common/CheckListTests.cs)
+
+```java 
+TBD
+```
+```csharp 
+[Test]
+public void SelectCheckList() 
+{
+    MyCheckList.Select("value1", "value2");
+}
+[Test]
+public void SelectByIndexes() 
+{
+    MyCheckList.Select(1, 3);
+}
+```
+
 ### MultiSelector
 **MultiSelector** – a graphical control element, that allows the user to do multiple choice.
 
