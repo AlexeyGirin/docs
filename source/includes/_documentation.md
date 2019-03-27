@@ -192,8 +192,8 @@ Here is the list of some available methods:
 
 |Method | Description | Return Type
 --- | --- | ---
-**Select(string[]/int[])** |Select checklist by values/indexes  | void
-**GetSelected()** |Get selected checkboxes from checklist value  | string[]
+**Check(string[]/int[])** |Select checklist by values/indexes  | void
+**GetChecked()** |Get selected checkboxes from checklist value  | string[]
 
 [Test examples](https://github.com/jdi-testing/jdi-light-csharp/blob/master/JDI.Light/JDI.Light.Tests/Tests/Common/CheckListTests.cs)
 
