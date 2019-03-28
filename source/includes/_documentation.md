@@ -193,6 +193,9 @@ Here is the list of some available methods:
 |Method | Description | Return Type
 --- | --- | ---
 **Check(string[]/int[])** |Select checklist by values/indexes  | void
+**Check(string/int)** |Select checklist by value/index  | void
+**Uncheck(string[]/int[])** |Unselect checklist by values/indexes  | void
+**Uncheck(string/int)** |Unselect checklist by value/index  | void
 **GetChecked()** |Get selected checkboxes from checklist value  | string[]
 
 [Test examples](https://github.com/jdi-testing/jdi-light-csharp/blob/master/JDI.Light/JDI.Light.Tests/Tests/Common/CheckListTests.cs)
@@ -202,14 +205,16 @@ TBD
 ```
 ```csharp 
 [Test]
-public void SelectCheckList() 
+public void CheckCheckList() 
 {
-    MyCheckList.Select("value1", "value2");
+    MyCheckList.Check("value1", "value2");
+    MyCheckList.Uncheck("value2");
 }
 [Test]
-public void SelectByIndexes() 
+public void CheckByIndexes() 
 {
-    MyCheckList.Select(1, 3);
+    MyCheckList.Check(1, 3);
+    MyCheckList.Uncheck(1);
 }
 ```
 
